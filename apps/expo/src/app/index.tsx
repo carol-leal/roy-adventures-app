@@ -112,7 +112,7 @@ function MobileAuth() {
             ? authClient.signOut()
             : authClient.signIn.social({
                 provider: "discord",
-                callbackURL: "/",
+                callbackURL: "expo://",
               })
         }
         title={session ? "Sign Out" : "Sign In With Discord"}

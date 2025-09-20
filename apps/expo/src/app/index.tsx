@@ -1,11 +1,19 @@
 import { useState } from "react";
-import { Button, Pressable, Text, TextInput, View } from "react-native";
+import {
+  Button as Button2,
+  Pressable,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Stack } from "expo-router";
 import { LegendList } from "@legendapp/list";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { RouterOutputs } from "~/utils/api";
+import { Button } from "~/components/ui/button";
+import { Text as Text2 } from "~/components/ui/text";
 import { trpc } from "~/utils/api";
 import { authClient } from "~/utils/auth";
 
@@ -106,7 +114,7 @@ function MobileAuth() {
       <Text className="pb-2 text-center text-xl font-semibold text-zinc-900">
         {session?.user.name ? `Hello, ${session.user.name}` : "Not logged in"}
       </Text>
-      <Button
+      <Button2
         onPress={() =>
           session
             ? authClient.signOut()
@@ -150,7 +158,9 @@ export default function Index() {
             Press on a post
           </Text>
         </View>
-
+        <Button>
+          <Text2>Click me!</Text2>
+        </Button>
         <LegendList
           data={postQuery.data ?? []}
           estimatedItemSize={20}

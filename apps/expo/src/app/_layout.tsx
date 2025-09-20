@@ -7,6 +7,8 @@ import { queryClient } from "~/utils/api";
 
 import "../styles.css";
 
+import { PortalHost } from "@rn-primitives/portal";
+
 // This is the main layout of the app
 // It wraps your pages with the providers they need
 export default function RootLayout() {
@@ -29,6 +31,7 @@ export default function RootLayout() {
         }}
       />
       <StatusBar />
+      <PortalHost />
     </QueryClientProvider>
   );
 }

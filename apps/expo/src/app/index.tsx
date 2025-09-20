@@ -12,6 +12,7 @@ import { LegendList } from "@legendapp/list";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { RouterOutputs } from "~/utils/api";
+import { SignInForm } from "~/components/sign-in-form";
 import { Button } from "~/components/ui/button";
 import { Text as Text2 } from "~/components/ui/text";
 import { trpc } from "~/utils/api";
@@ -111,9 +112,7 @@ function MobileAuth() {
 
   return (
     <>
-      <Text className="pb-2 text-center text-xl font-semibold text-zinc-900">
-        {session?.user.name ? `Hello, ${session.user.name}` : "Not logged in"}
-      </Text>
+      {session ? null : <SignInForm />}
       <Button2
         onPress={() =>
           session
